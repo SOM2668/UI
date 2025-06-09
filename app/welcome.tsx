@@ -8,11 +8,13 @@ import { Heart } from 'lucide-react-native';
 import Logo from '@/components/Logo';
 import Button from '@/components/Button';
 import Colors from '@/constants/Colors';
+import { useApp } from '@/contexts/AppContext';
 
 const { width, height } = Dimensions.get('window');
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 export default function WelcomeScreen() {
+  const { state } = useApp();
   const scale = useSharedValue(0.8);
   const opacity = useSharedValue(0);
   const buttonOpacity = useSharedValue(0);
@@ -54,7 +56,13 @@ export default function WelcomeScreen() {
     if (Platform.OS !== 'web') {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     }
-    router.replace('/(tabs)');
+    
+    // Check if user is authenticated
+    if (state.isAuthenticated) {
+      router.replace('/(main)');
+    } else {
+      router.replace('/(auth)/login');
+    }
   };
 
   return (
