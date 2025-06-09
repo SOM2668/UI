@@ -58,28 +58,28 @@ export default function PremiumScreen() {
         
         <View style={styles.benefitsContainer}>
           <BenefitItem
-            icon={<MaterialIcons name="security" size={22} color={Colors.primary.main} />}
+            icon={<MaterialIcons name="security\" size={22} color={Colors.primary.main} />}
             title="Ad-Free Experience"
             description="Enjoy Flirtshaala without any advertisements"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<MaterialCommunityIcons name="lightning-bolt" size={22} color={Colors.primary.main} />}
+            icon={<MaterialCommunityIcons name="lightning-bolt\" size={22} color={Colors.primary.main} />}
             title="Unlimited Flirty Responses"
             description="No daily limits on AI-generated flirty messages"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<MaterialCommunityIcons name="clock-fast" size={22} color={Colors.primary.main} />}
+            icon={<MaterialCommunityIcons name="clock-fast\" size={22} color={Colors.primary.main} />}
             title="Priority Processing"
             description="Get faster responses even during peak hours"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<FontAwesome name="heart" size={22} color={Colors.primary.main} />}
+            icon={<FontAwesome name="heart\" size={22} color={Colors.primary.main} />}
             title="Exclusive Flirting Templates"
             description="Access to premium templates for different situations"
             isActive={state.user?.isPremium}

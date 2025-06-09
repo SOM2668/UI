@@ -318,7 +318,7 @@ export default function UploadScreen() {
                   disabled={isGenerating}
                   fullWidth
                   size="large"
-                  icon={!isGenerating ? <MaterialCommunityIcons name="auto-fix" size={20} color={Colors.neutral.white} /> : undefined}
+                  icon={!isGenerating ? <MaterialCommunityIcons name="auto-fix\" size={20} color={Colors.neutral.white} /> : undefined}
                 />
               </View>
             )}
@@ -350,7 +350,7 @@ export default function UploadScreen() {
                 style={styles.copyButton}
               >
                 {copied ? (
-                  <MaterialIcons name="check-circle" size={24} color={Colors.success.main} />
+                  <MaterialIcons name="check-circle\" size={24} color={Colors.success.main} />
                 ) : (
                   <MaterialCommunityIcons name="content-copy" size={24} color={Colors.primary.main} />
                 )}
@@ -379,7 +379,7 @@ export default function UploadScreen() {
               onPress={handleReset}
               variant="outline"
               fullWidth
-              icon={<MaterialCommunityIcons name="refresh" size={20} color={Colors.primary.main} />}
+              icon={<MaterialCommunityIcons name="refresh\" size={20} color={Colors.primary.main} />}
             />
           </Animated.View>
         )}

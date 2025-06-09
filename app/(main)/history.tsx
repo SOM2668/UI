@@ -133,7 +133,7 @@ export default function HistoryScreen() {
           <View style={styles.itemHeader}>
             <View style={styles.iconContainer}>
               {item.type === 'paste' ? (
-                <MaterialCommunityIcons name="message-text" size={20} color={Colors.primary.main} />
+                <MaterialCommunityIcons name="message-text\" size={20} color={Colors.primary.main} />
               ) : (
                 <MaterialIcons name="image" size={20} color={Colors.secondary.main} />
               )}
@@ -173,7 +173,7 @@ export default function HistoryScreen() {
                 onPress={() => handleCopyReply(item.wittyReply, item.id)}
               >
                 {isCopied ? (
-                  <MaterialIcons name="check-circle" size={16} color={Colors.success.main} />
+                  <MaterialIcons name="check-circle\" size={16} color={Colors.success.main} />
                 ) : (
                   <MaterialCommunityIcons name="content-copy" size={16} color={Colors.neutral.darker} />
                 )}

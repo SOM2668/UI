@@ -64,7 +64,7 @@ export default function HomeScreen() {
                 onPress={handleLogout}
                 variant="outline"
                 size="small"
-                icon={<MaterialIcons name="logout" size={16} color={Colors.primary.main} />}
+                icon={<MaterialIcons name="logout\" size={16} color={Colors.primary.main} />}
                 style={styles.logoutButton}
               />
             </View>
@@ -94,7 +94,7 @@ export default function HomeScreen() {
               onPress={handlePasteChat}
               fullWidth
               size="large"
-              icon={<MaterialCommunityIcons name="content-paste" size={20} color={Colors.neutral.white} />}
+              icon={<MaterialCommunityIcons name="content-paste\" size={20} color={Colors.neutral.white} />}
               style={styles.actionButton}
             />
             <Text style={styles.actionDescription}>
@@ -115,7 +115,7 @@ export default function HomeScreen() {
               variant="secondary"
               fullWidth
               size="large"
-              icon={<MaterialCommunityIcons name="upload" size={20} color={Colors.neutral.white} />}
+              icon={<MaterialCommunityIcons name="upload\" size={20} color={Colors.neutral.white} />}
               style={styles.actionButton}
             />
             <Text style={styles.actionDescription}>
