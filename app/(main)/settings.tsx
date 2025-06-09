@@ -10,7 +10,7 @@ import {
   Alert
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Settings as SettingsIcon, Crown, Shield, Bell, Moon, Globe, CircleHelp as HelpCircle, Mail, Star, ChevronRight, Info, LogOut } from 'lucide-react-native';
+import { MaterialIcons, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { router } from 'expo-router';
 import Colors from '@/constants/Colors';
@@ -85,7 +85,7 @@ export default function SettingsScreen() {
         )}
       </View>
       {rightComponent || (showChevron && onPress && (
-        <ChevronRight size={20} color={Colors.neutral.dark} />
+        <MaterialIcons name="chevron-right" size={20} color={Colors.neutral.dark} />
       ))}
     </TouchableOpacity>
   );
@@ -119,7 +119,7 @@ export default function SettingsScreen() {
           <SectionHeader title="Account" />
           <View style={styles.section}>
             <SettingItem
-              icon={<Crown size={22} color={Colors.secondary.main} />}
+              icon={<MaterialCommunityIcons name="crown" size={22} color={Colors.secondary.main} />}
               title="Premium Status"
               subtitle={state.user?.isPremium ? 'Premium features enabled' : 'Free version'}
               rightComponent={
@@ -138,7 +138,7 @@ export default function SettingsScreen() {
             
             {!state.user?.isPremium && (
               <SettingItem
-                icon={<Shield size={22} color={Colors.primary.main} />}
+                icon={<MaterialIcons name="security" size={22} color={Colors.primary.main} />}
                 title="Upgrade to Premium"
                 subtitle="Remove ads and unlock all features"
                 onPress={() => router.push('/(main)/premium')}
@@ -152,21 +152,21 @@ export default function SettingsScreen() {
           <SectionHeader title="App Settings" />
           <View style={styles.section}>
             <SettingItem
-              icon={<Bell size={22} color={Colors.neutral.darker} />}
+              icon={<Ionicons name="notifications" size={22} color={Colors.neutral.darker} />}
               title="Notifications"
               subtitle="Manage notification preferences"
               onPress={() => Alert.alert('Notifications', 'Notification settings coming soon!')}
             />
             
             <SettingItem
-              icon={<Moon size={22} color={Colors.neutral.darker} />}
+              icon={<Ionicons name="moon" size={22} color={Colors.neutral.darker} />}
               title="Dark Mode"
               subtitle="Switch between light and dark themes"
               onPress={() => Alert.alert('Dark Mode', 'Theme settings coming soon!')}
             />
             
             <SettingItem
-              icon={<Globe size={22} color={Colors.neutral.darker} />}
+              icon={<Ionicons name="globe" size={22} color={Colors.neutral.darker} />}
               title="Language"
               subtitle="English"
               onPress={() => Alert.alert('Language', 'Language settings coming soon!')}
@@ -179,7 +179,7 @@ export default function SettingsScreen() {
           <SectionHeader title="Data & Privacy" />
           <View style={styles.section}>
             <SettingItem
-              icon={<Shield size={22} color={Colors.neutral.darker} />}
+              icon={<MaterialIcons name="security" size={22} color={Colors.neutral.darker} />}
               title="Clear Chat History"
               subtitle="Delete all saved conversations"
               onPress={() => {
@@ -208,21 +208,21 @@ export default function SettingsScreen() {
           <SectionHeader title="Support" />
           <View style={styles.section}>
             <SettingItem
-              icon={<HelpCircle size={22} color={Colors.neutral.darker} />}
+              icon={<MaterialIcons name="help" size={22} color={Colors.neutral.darker} />}
               title="Help & FAQ"
               subtitle="Get help and find answers"
               onPress={() => Alert.alert('Help', 'Help center coming soon!')}
             />
             
             <SettingItem
-              icon={<Mail size={22} color={Colors.neutral.darker} />}
+              icon={<MaterialIcons name="email" size={22} color={Colors.neutral.darker} />}
               title="Contact Us"
               subtitle="Send feedback or report issues"
               onPress={() => Alert.alert('Contact', 'Contact form coming soon!')}
             />
             
             <SettingItem
-              icon={<Star size={22} color={Colors.neutral.darker} />}
+              icon={<MaterialIcons name="star" size={22} color={Colors.neutral.darker} />}
               title="Rate App"
               subtitle="Rate us on the app store"
               onPress={() => Alert.alert('Rate App', 'App store rating coming soon!')}
@@ -235,7 +235,7 @@ export default function SettingsScreen() {
           <SectionHeader title="About" />
           <View style={styles.section}>
             <SettingItem
-              icon={<Info size={22} color={Colors.neutral.darker} />}
+              icon={<MaterialIcons name="info" size={22} color={Colors.neutral.darker} />}
               title="App Version"
               subtitle="1.0.0"
               showChevron={false}
@@ -247,7 +247,7 @@ export default function SettingsScreen() {
         <Animated.View entering={FadeInDown.delay(600)}>
           <View style={styles.section}>
             <SettingItem
-              icon={<LogOut size={22} color={Colors.error.main} />}
+              icon={<MaterialIcons name="logout" size={22} color={Colors.error.main} />}
               title="Logout"
               subtitle="Sign out of your account"
               onPress={handleLogout}
