@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Platform } from 'react-native';
 import Colors from '@/constants/Colors';
-import { X } from 'lucide-react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 type BannerAdProps = {
   onClose?: () => void;
@@ -26,7 +26,7 @@ export default function BannerAd({ onClose, onUpgrade }: BannerAdProps) {
           style={styles.closeButton}
           onPress={onClose}
         >
-          <X size={16} color={Colors.neutral.darker} />
+          <MaterialIcons name="close" size={16} color={Colors.neutral.darker} />
         </TouchableOpacity>
       )}
     </View>

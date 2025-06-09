@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Platform, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Shield, Zap, Clock, Heart, Check } from 'lucide-react-native';
+import { MaterialIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import Button from '@/components/Button';
 import PremiumBadge from '@/components/PremiumBadge';
@@ -58,28 +58,28 @@ export default function PremiumScreen() {
         
         <View style={styles.benefitsContainer}>
           <BenefitItem
-            icon={<Shield size={22} color={Colors.primary.main} />}
+            icon={<MaterialIcons name="security" size={22} color={Colors.primary.main} />}
             title="Ad-Free Experience"
             description="Enjoy Flirtshaala without any advertisements"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<Zap size={22} color={Colors.primary.main} />}
+            icon={<MaterialCommunityIcons name="lightning-bolt" size={22} color={Colors.primary.main} />}
             title="Unlimited Flirty Responses"
             description="No daily limits on AI-generated flirty messages"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<Clock size={22} color={Colors.primary.main} />}
+            icon={<MaterialCommunityIcons name="clock-fast" size={22} color={Colors.primary.main} />}
             title="Priority Processing"
             description="Get faster responses even during peak hours"
             isActive={state.user?.isPremium}
           />
           
           <BenefitItem
-            icon={<Heart size={22} color={Colors.primary.main} fill={Colors.primary.main} />}
+            icon={<FontAwesome name="heart" size={22} color={Colors.primary.main} />}
             title="Exclusive Flirting Templates"
             description="Access to premium templates for different situations"
             isActive={state.user?.isPremium}
@@ -180,7 +180,7 @@ function BenefitItem({
       <View style={styles.benefitContent}>
         <View style={styles.benefitTitleRow}>
           <Text style={styles.benefitTitle}>{title}</Text>
-          {isActive && <Check size={16} color={Colors.success.main} />}
+          {isActive && <MaterialIcons name="check" size={16} color={Colors.success.main} />}
         </View>
         <Text style={styles.benefitDescription}>{description}</Text>
       </View>
@@ -191,7 +191,7 @@ function BenefitItem({
 function PlanFeature({ text, featured = false }: { text: string, featured?: boolean }) {
   return (
     <View style={styles.planFeatureRow}>
-      <Check size={16} color={featured ? Colors.primary.main : Colors.secondary.main} />
+      <MaterialIcons name="check" size={16} color={featured ? Colors.primary.main : Colors.secondary.main} />
       <Text style={[
         styles.planFeatureText,
         featured && styles.featuredPlanFeatureText

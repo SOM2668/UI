@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Platform, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Heart, Upload, Clipboard, Sparkles, LogOut } from 'lucide-react-native';
+import { FontAwesome, MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -64,7 +64,7 @@ export default function HomeScreen() {
                 onPress={handleLogout}
                 variant="outline"
                 size="small"
-                icon={<LogOut size={16} color={Colors.primary.main} />}
+                icon={<MaterialIcons name="logout" size={16} color={Colors.primary.main} />}
                 style={styles.logoutButton}
               />
             </View>
@@ -94,7 +94,7 @@ export default function HomeScreen() {
               onPress={handlePasteChat}
               fullWidth
               size="large"
-              icon={<Clipboard size={20} color={Colors.neutral.white} />}
+              icon={<MaterialCommunityIcons name="content-paste" size={20} color={Colors.neutral.white} />}
               style={styles.actionButton}
             />
             <Text style={styles.actionDescription}>
@@ -115,7 +115,7 @@ export default function HomeScreen() {
               variant="secondary"
               fullWidth
               size="large"
-              icon={<Upload size={20} color={Colors.neutral.white} />}
+              icon={<MaterialCommunityIcons name="upload" size={20} color={Colors.neutral.white} />}
               style={styles.actionButton}
             />
             <Text style={styles.actionDescription}>
@@ -129,7 +129,7 @@ export default function HomeScreen() {
           
           <View style={styles.featureItem}>
             <View style={styles.featureIconContainer}>
-              <Heart size={20} color={Colors.primary.main} fill={Colors.primary.main} />
+              <FontAwesome name="heart" size={20} color={Colors.primary.main} />
             </View>
             <View style={styles.featureTextContainer}>
               <Text style={styles.featureTitle}>Personalized Flirting</Text>
@@ -141,7 +141,7 @@ export default function HomeScreen() {
           
           <View style={styles.featureItem}>
             <View style={styles.featureIconContainer}>
-              <Sparkles size={20} color={Colors.secondary.main} />
+              <MaterialCommunityIcons name="auto-fix" size={20} color={Colors.secondary.main} />
             </View>
             <View style={styles.featureTextContainer}>
               <Text style={styles.featureTitle}>AI-Powered Magic</Text>

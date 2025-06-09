@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react-native';
+import { MaterialIcons, Feather } from '@expo/vector-icons';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import Colors from '@/constants/Colors';
 import Logo from '@/components/Logo';
@@ -82,7 +82,7 @@ export default function SignupScreen() {
 
           <View style={styles.inputContainer}>
             <View style={styles.inputWrapper}>
-              <User size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
+              <MaterialIcons name="person" size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
               <TextInput
                 style={styles.textInput}
                 placeholder="Full Name"
@@ -95,7 +95,7 @@ export default function SignupScreen() {
             </View>
 
             <View style={styles.inputWrapper}>
-              <Mail size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
+              <MaterialIcons name="email" size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
               <TextInput
                 style={styles.textInput}
                 placeholder="Email"
@@ -109,7 +109,7 @@ export default function SignupScreen() {
             </View>
 
             <View style={styles.inputWrapper}>
-              <Lock size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
+              <MaterialIcons name="lock" size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
               <TextInput
                 style={[styles.textInput, styles.passwordInput]}
                 placeholder="Password"
@@ -124,16 +124,16 @@ export default function SignupScreen() {
                 onPress={() => setShowPassword(!showPassword)}
                 style={styles.eyeIcon}
               >
-                {showPassword ? (
-                  <EyeOff size={20} color={Colors.neutral.dark} />
-                ) : (
-                  <Eye size={20} color={Colors.neutral.dark} />
-                )}
+                <Feather 
+                  name={showPassword ? "eye-off" : "eye"} 
+                  size={20} 
+                  color={Colors.neutral.dark} 
+                />
               </TouchableOpacity>
             </View>
 
             <View style={styles.inputWrapper}>
-              <Lock size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
+              <MaterialIcons name="lock" size={20} color={Colors.neutral.dark} style={styles.inputIcon} />
               <TextInput
                 style={[styles.textInput, styles.passwordInput]}
                 placeholder="Confirm Password"
@@ -148,11 +148,11 @@ export default function SignupScreen() {
                 onPress={() => setShowConfirmPassword(!showConfirmPassword)}
                 style={styles.eyeIcon}
               >
-                {showConfirmPassword ? (
-                  <EyeOff size={20} color={Colors.neutral.dark} />
-                ) : (
-                  <Eye size={20} color={Colors.neutral.dark} />
-                )}
+                <Feather 
+                  name={showConfirmPassword ? "eye-off" : "eye"} 
+                  size={20} 
+                  color={Colors.neutral.dark} 
+                />
               </TouchableOpacity>
             </View>
           </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, withRepeat, withTiming, withDelay, Easing } from 'react-native-reanimated';
-import { Heart } from 'lucide-react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 
 type LogoProps = {
@@ -65,7 +65,7 @@ export default function Logo({ showTagline = true, size = 'large' }: LogoProps) 
       <View style={styles.logoContainer}>
         <Text style={[styles.logoText, sizeStyles[size].title]}>Flirt</Text>
         <Animated.View style={[styles.heartContainer, heartStyle]}>
-          <Heart color={Colors.primary.main} size={sizeStyles[size].heart.size} fill={Colors.primary.main} />
+          <FontAwesome name="heart" color={Colors.primary.main} size={sizeStyles[size].heart.size} />
         </Animated.View>
         <Text style={[styles.logoText, sizeStyles[size].title]}>shaala</Text>
       </View>

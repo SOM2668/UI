@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Tabs } from 'expo-router';
 import { Platform } from 'react-native';
-import { Chrome as Home, Clock, Crown, Settings } from 'lucide-react-native';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { useApp } from '@/contexts/AppContext';
 import BannerAd from '@/components/BannerAd';
@@ -40,7 +40,7 @@ export default function MainLayout() {
           options={{
             title: 'Home',
             tabBarIcon: ({ color, size }) => (
-              <Home color={color} size={size} />
+              <Ionicons name="home" color={color} size={size} />
             ),
           }}
         />
@@ -49,7 +49,7 @@ export default function MainLayout() {
           options={{
             title: 'History',
             tabBarIcon: ({ color, size }) => (
-              <Clock color={color} size={size} />
+              <MaterialCommunityIcons name="clock-outline" color={color} size={size} />
             ),
           }}
         />
@@ -58,7 +58,7 @@ export default function MainLayout() {
           options={{
             title: 'Premium',
             tabBarIcon: ({ color, size }) => (
-              <Crown color={color} size={size} />
+              <MaterialCommunityIcons name="crown" color={color} size={size} />
             ),
           }}
         />
@@ -67,7 +67,7 @@ export default function MainLayout() {
           options={{
             title: 'Settings',
             tabBarIcon: ({ color, size }) => (
-              <Settings color={color} size={size} />
+              <Ionicons name="settings" color={color} size={size} />
             ),
           }}
         />

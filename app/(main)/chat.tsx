@@ -11,7 +11,7 @@ import {
   Alert
 } from 'react-native';
 import { router } from 'expo-router';
-import { ArrowLeft, Copy, CircleCheck as CheckCircle2, MessageSquare, Sparkles } from 'lucide-react-native';
+import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import Animated, { FadeIn, FadeInDown, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Clipboard from 'expo-clipboard';
@@ -102,11 +102,11 @@ export default function ChatScreen() {
           onPress={() => router.back()}
           style={styles.backButton}
         >
-          <ArrowLeft size={24} color={Colors.neutral.black} />
+          <Ionicons name="arrow-back" size={24} color={Colors.neutral.black} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Paste Chat</Text>
         <View style={styles.headerIcon}>
-          <MessageSquare size={24} color={Colors.primary.main} />
+          <MaterialCommunityIcons name="message-text" size={24} color={Colors.primary.main} />
         </View>
       </Animated.View>
 
@@ -156,7 +156,7 @@ export default function ChatScreen() {
             loading={isGenerating}
             fullWidth
             size="large"
-            icon={!isGenerating ? <Sparkles size={20} color={Colors.neutral.white} /> : undefined}
+            icon={!isGenerating ? <MaterialCommunityIcons name="auto-fix" size={20} color={Colors.neutral.white} /> : undefined}
           />
         </Animated.View>
 
@@ -185,9 +185,9 @@ export default function ChatScreen() {
                 style={styles.copyButton}
               >
                 {copied ? (
-                  <CheckCircle2 size={24} color={Colors.success.main} />
+                  <MaterialIcons name="check-circle" size={24} color={Colors.success.main} />
                 ) : (
-                  <Copy size={24} color={Colors.primary.main} />
+                  <MaterialCommunityIcons name="content-copy" size={24} color={Colors.primary.main} />
                 )}
               </TouchableOpacity>
             </View>

@@ -12,14 +12,10 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { 
-  MessageSquare, 
-  Clock, 
-  Copy, 
-  Trash2, 
-  Image as ImageIcon,
-  Sparkles,
-  CircleCheck as CheckCircle2
-} from 'lucide-react-native';
+  MaterialCommunityIcons, 
+  MaterialIcons,
+  Ionicons
+} from '@expo/vector-icons';
 import Animated, { 
   FadeIn, 
   FadeInDown, 
@@ -137,9 +133,9 @@ export default function HistoryScreen() {
           <View style={styles.itemHeader}>
             <View style={styles.iconContainer}>
               {item.type === 'paste' ? (
-                <MessageSquare size={20} color={Colors.primary.main} />
+                <MaterialCommunityIcons name="message-text" size={20} color={Colors.primary.main} />
               ) : (
-                <ImageIcon size={20} color={Colors.secondary.main} />
+                <MaterialIcons name="image" size={20} color={Colors.secondary.main} />
               )}
             </View>
             
@@ -161,7 +157,7 @@ export default function HistoryScreen() {
           {item.wittyReply && (
             <View style={styles.replySection}>
               <View style={styles.replyHeader}>
-                <Sparkles size={14} color={Colors.primary.main} />
+                <MaterialCommunityIcons name="auto-fix" size={14} color={Colors.primary.main} />
                 <Text style={styles.replyLabel}>Witty Reply:</Text>
               </View>
               <Text style={styles.replyText} numberOfLines={2}>
@@ -177,9 +173,9 @@ export default function HistoryScreen() {
                 onPress={() => handleCopyReply(item.wittyReply, item.id)}
               >
                 {isCopied ? (
-                  <CheckCircle2 size={16} color={Colors.success.main} />
+                  <MaterialIcons name="check-circle" size={16} color={Colors.success.main} />
                 ) : (
-                  <Copy size={16} color={Colors.neutral.darker} />
+                  <MaterialCommunityIcons name="content-copy" size={16} color={Colors.neutral.darker} />
                 )}
                 <Text style={[
                   styles.actionButtonText,
@@ -209,7 +205,7 @@ export default function HistoryScreen() {
                 );
               }}
             >
-              <Trash2 size={16} color={Colors.error.main} />
+              <MaterialCommunityIcons name="delete" size={16} color={Colors.error.main} />
               <Text style={[styles.actionButtonText, { color: Colors.error.main }]}>
                 Delete
               </Text>
@@ -219,7 +215,7 @@ export default function HistoryScreen() {
         
         {isSelected && (
           <View style={styles.selectionIndicator}>
-            <CheckCircle2 size={20} color={Colors.primary.main} />
+            <MaterialIcons name="check-circle" size={20} color={Colors.primary.main} />
           </View>
         )}
       </Animated.View>
@@ -231,7 +227,7 @@ export default function HistoryScreen() {
       entering={FadeIn.delay(300)}
       style={styles.emptyContainer}
     >
-      <Clock size={64} color={Colors.neutral.dark} />
+      <MaterialCommunityIcons name="clock-outline" size={64} color={Colors.neutral.dark} />
       <Text style={styles.emptyTitle}>No History Yet</Text>
       <Text style={styles.emptyText}>
         Your chat analysis history will appear here.{'\n'}
@@ -318,7 +314,7 @@ export default function HistoryScreen() {
                 );
               }}
             >
-              <Trash2 size={20} color={Colors.error.main} />
+              <MaterialCommunityIcons name="delete" size={20} color={Colors.error.main} />
               <Text style={styles.selectionActionText}>Delete</Text>
             </TouchableOpacity>
             <TouchableOpacity

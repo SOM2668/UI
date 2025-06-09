@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, Dimensions, Pressable, Platform } from 'react-n
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withDelay, Easing, FadeIn, FadeOut } from 'react-native-reanimated';
-import * as Haptics from 'expo-haptics';
-import { Heart } from 'lucide-react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import Logo from '@/components/Logo';
 import Button from '@/components/Button';
 import Colors from '@/constants/Colors';
@@ -53,10 +52,6 @@ export default function WelcomeScreen() {
   });
   
   const handleContinue = () => {
-    if (Platform.OS !== 'web') {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    }
-    
     // Check if user is authenticated
     if (state.isAuthenticated) {
       router.replace('/(main)');
@@ -128,7 +123,7 @@ function FloatingHeart({ delay = 0 }) {
         },
       ]}
     >
-      <Heart color={Colors.primary.light} size={size} fill={Colors.primary.light} />
+      <FontAwesome name="heart" color={Colors.primary.light} size={size} />
     </Animated.View>
   );
 }

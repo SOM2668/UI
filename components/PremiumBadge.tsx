@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Crown } from 'lucide-react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 
 type PremiumBadgeProps = {
@@ -28,7 +28,7 @@ export default function PremiumBadge({ size = 'medium' }: PremiumBadgeProps) {
   
   return (
     <View style={[styles.container, sizeStyles[size].container]}>
-      <Crown size={sizeStyles[size].icon} color={Colors.neutral.white} fill={Colors.neutral.white} />
+      <MaterialCommunityIcons name="crown" size={sizeStyles[size].icon} color={Colors.neutral.white} />
       <Text style={[styles.text, sizeStyles[size].text]}>Premium</Text>
     </View>
   );

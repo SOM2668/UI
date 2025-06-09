@@ -12,16 +12,10 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import { 
-  ArrowLeft, 
-  Upload, 
-  Copy, 
-  CircleCheck as CheckCircle2, 
-  Image as ImageIcon, 
-  Camera,
-  RefreshCw,
-  Sparkles,
-  Eye
-} from 'lucide-react-native';
+  Ionicons, 
+  MaterialCommunityIcons, 
+  MaterialIcons
+} from '@expo/vector-icons';
 import Animated, { 
   FadeIn, 
   FadeInDown, 
@@ -224,11 +218,11 @@ export default function UploadScreen() {
           onPress={() => router.back()}
           style={styles.backButton}
         >
-          <ArrowLeft size={24} color={Colors.neutral.black} />
+          <Ionicons name="arrow-back" size={24} color={Colors.neutral.black} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Upload Screenshot</Text>
         <View style={styles.headerIcon}>
-          <ImageIcon size={24} color={Colors.secondary.main} />
+          <MaterialIcons name="image" size={24} color={Colors.secondary.main} />
         </View>
       </Animated.View>
 
@@ -252,7 +246,7 @@ export default function UploadScreen() {
                     colors={Colors.gradient.secondary}
                     style={styles.uploadButtonGradient}
                   >
-                    <Upload size={32} color={Colors.neutral.white} />
+                    <MaterialCommunityIcons name="upload" size={32} color={Colors.neutral.white} />
                     <Text style={styles.uploadText}>Upload from Gallery</Text>
                     <Text style={styles.uploadHint}>PNG, JPG up to 10MB</Text>
                   </LinearGradient>
@@ -272,7 +266,7 @@ export default function UploadScreen() {
                   style={styles.cameraButton}
                   onPress={handleTakePhoto}
                 >
-                  <Camera size={24} color={Colors.secondary.main} />
+                  <MaterialIcons name="camera-alt" size={24} color={Colors.secondary.main} />
                   <Text style={styles.cameraButtonText}>Take Photo</Text>
                 </TouchableOpacity>
               )}
@@ -285,7 +279,7 @@ export default function UploadScreen() {
                   style={styles.changeImageButton}
                   onPress={handleReset}
                 >
-                  <RefreshCw size={20} color={Colors.neutral.white} />
+                  <MaterialCommunityIcons name="refresh" size={20} color={Colors.neutral.white} />
                 </TouchableOpacity>
               </View>
               
@@ -303,7 +297,7 @@ export default function UploadScreen() {
           <Animated.View entering={FadeInDown.delay(200)}>
             <View style={styles.extractedTextCard}>
               <View style={styles.extractedTextHeader}>
-                <Eye size={20} color={Colors.secondary.main} />
+                <MaterialIcons name="visibility" size={20} color={Colors.secondary.main} />
                 <Text style={styles.extractedTextTitle}>
                   {isExtracting ? 'Extracting Text...' : 'Extracted Text:'}
                 </Text>
@@ -324,7 +318,7 @@ export default function UploadScreen() {
                   disabled={isGenerating}
                   fullWidth
                   size="large"
-                  icon={!isGenerating ? <Sparkles size={20} color={Colors.neutral.white} /> : undefined}
+                  icon={!isGenerating ? <MaterialCommunityIcons name="auto-fix" size={20} color={Colors.neutral.white} /> : undefined}
                 />
               </View>
             )}
@@ -356,9 +350,9 @@ export default function UploadScreen() {
                 style={styles.copyButton}
               >
                 {copied ? (
-                  <CheckCircle2 size={24} color={Colors.success.main} />
+                  <MaterialIcons name="check-circle" size={24} color={Colors.success.main} />
                 ) : (
-                  <Copy size={24} color={Colors.primary.main} />
+                  <MaterialCommunityIcons name="content-copy" size={24} color={Colors.primary.main} />
                 )}
               </TouchableOpacity>
             </View>
@@ -385,7 +379,7 @@ export default function UploadScreen() {
               onPress={handleReset}
               variant="outline"
               fullWidth
-              icon={<RefreshCw size={20} color={Colors.primary.main} />}
+              icon={<MaterialCommunityIcons name="refresh" size={20} color={Colors.primary.main} />}
             />
           </Animated.View>
         )}
